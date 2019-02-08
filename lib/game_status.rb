@@ -49,13 +49,16 @@ def over?(board)
 end
 
 def winner(board)
-
-  WIN_COMBINATIONS.find do |winner|
-  if won?(board) == winner && board[winner[0]] == "X"
-      binding.pry
-    return "X"
-  elsif won?(board) == winner && board[winner[0]] == "O"
-    return "O"
-  end
+if won?(board)
+  return board[won?(board)[0]]
+else
+  return nil
+  #WIN_COMBINATIONS.find do |winner|
+  #if won?(board) == winner && board[winner[0]] == "X"
+  #    binding.pry
+  #  return "X"
+  #elsif won?(board) == winner && board[winner[0]] == "O"
+  #  return "O"
+#  end
  end
 end
