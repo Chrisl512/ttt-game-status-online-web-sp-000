@@ -51,7 +51,6 @@ end
 def winner(board)
 
   WIN_COMBINATIONS.find do |winner|
-  binding.pry
   if won?(board) == winner && board[winner[0]] == "X"
     return "X"
   elsif won?(board) == winner && board[winner[0]] == "O"
