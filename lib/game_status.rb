@@ -49,14 +49,15 @@ def over?(board)
 end
 
 def winner(board)
-binding.pry
-  won?(board).each do |winner|
-  if board[winner[0]] == "X" && board[winner[1]] == "X" && board[winner[2]] == "X"
+
+  WIN_COMBINATIONS.find do |winner|
+  binding.pry  
+  if won?(board) == winner && board[0] == "X"
     return "X"
   elsif board[winner[0]] == "O" && board[winner[1]] == "O" && board[winner[2]] == "O"
     return "O"
   elsif over?(board) == true
     nil
-  end
+
  end
 end
